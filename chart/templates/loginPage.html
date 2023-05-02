@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            Body {  
+            font-family: Calibri, Helvetica, sans-serif;  
+            background-color:rgb(248, 250, 248);  
+            }  
+            button {   
+                background-color: #872594;   
+                width: 50%;  
+                    color: rgb(249, 252, 252);   
+                    padding: 12px 28px;   
+                    margin: 0 auto;
+                    display: block;
+                    align-self: center;   
+                    border-color: none;   
+                    cursor: pointer;   
+                    }   
+            form {   
+                    border: 3px solid #f1f1f1;   
+                }   
+            input[type=text], input[type=password] {
+                    width: 50%;   
+                    margin: 0 auto;
+                    color: rgb(46, 48, 46); 
+                    padding: 12px 20px;
+                    align-content: center;  
+                    display: inline-block;   
+                    border: none;
+                    border-radius: 12px;
+                    box-sizing: border-box;    
+                }  
+            button:hover {   
+                    opacity: 0.7;   
+                }   
+               
+            .input-icons i {
+            position: absolute;
+                }
+          
+            .input-icons {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .icon {
+                padding: 10px;
+                color: rgb(46, 48, 46);
+                min-width: 50px;
+                text-align: center;
+            }
+            
+            .input-field {
+                width: 50%;
+                padding: 10px;
+                color: whitesmoke;
+                text-align: center;
+                align-content: center;
+            }
+            
+            h1 {
+                color: black;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1> Sign in</h1></center>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-icons">
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="Username"  required>
+            </div>
+            <div class="input-icons">
+                <i class="fa fa-key icon"></i>
+                <input class="input-field" type="password" placeholder="Password" required>
+                <button type="submit" border-radius=12px;>Login</button> 
+            </div> 
+            <a href="#" allign="center"> Forgot password? </a>           
+        </form>
+    </body>
+</html>
