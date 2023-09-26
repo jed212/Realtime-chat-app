@@ -1,13 +1,13 @@
 from django.urls import path, include
-from chart.views import chatPage, chatRoom
+from chart.views import chatPage, chatRoom, LoginView, LogoutView
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
-	path("", chatPage, name="chat-page"),
-
-	# login-section
-	path("auth/login/", LoginView.as_view
-		(template_name="loginPage.html"), name="login-user"),
-	path("auth/logout/", LogoutView.as_view(), name="logout-user"),
+	path("login/", LoginView.as_view
+         (template_name="templates/loginPage.html"), name="login-user"),
+    path("", chatPage, name="chat-page"),
+    path("", chatRoom, name="chat-room"),
+    path("logout/", login_required(LogoutView.as_view()), name="logout-user"),
 ]

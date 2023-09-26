@@ -8,7 +8,11 @@
             Body {  
             font-family: Calibri, Helvetica, sans-serif;  
             background-color:rgb(248, 250, 248);  
-            }  
+            }
+            .center-heading {
+                text-align: center;
+                color: black;
+            }
             button {   
                 background-color: #872594;   
                 width: 50%;  
@@ -68,9 +72,10 @@
         </style>
     </head>
     <body>
-        <center><h1> Sign in</h1></center>
+        <h1 class="center-heading"> Sign in</h1>
         <form method="post">
             {% csrf_token %}
+            {{form.as_p}}
             <div class="input-icons">
                 <i class="fa fa-user icon"></i>
                 <input class="input-field" type="text" placeholder="Username"  required>
@@ -82,5 +87,8 @@
             </div> 
             <a href="#" allign="center"> Forgot password? </a>           
         </form>
+        {% if error_message %}
+        <p>{{ error_message }}</p>
+        {% endif %}
     </body>
 </html>

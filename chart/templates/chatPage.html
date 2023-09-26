@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<centre><h1>Welcome to Chart ! {{request.user}}</h1></centre>
+	<centre><h1>Welcome to chat app {{request.user}}!</h1></centre>
 	<br>
 	{% if request.user.is_authenticated %}
 	<centre> Logout the chat Page <a href = "{% url 'logout-user' %}">Logout</a></centre>
