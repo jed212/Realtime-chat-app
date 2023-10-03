@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chat Box</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+            * {
+                box-sizing: border-box;
+                font-family: 'Roboto', sans-serif;
+            }
+            .container{
+                width: 80%;
+                margin: auto;
+                margin-top: 2rem;
+                letter-spacing: 0.5px;
+                height: 80%;
+            }
+            .message-header {
+                border: 1px solid #ccc;
+                width: 100%;
+                height: 10%;
+                border-bottom: none;
+                display: inline-block;
+                background-color: #efefef;
+                margin: 0;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+
+            }
+            .msgimg {
+                margin-left: 2%;
+                float: left;
+            }
+            .container1 {
+                width: 270px;
+                height: auto; 
+                float: left;
+                margin: 0;
+            }
+            .active {
+                width: 150px;
+                float: left;
+                color: black;
+                font-weight: bold;
+                margin: 0 0 0 5px;
+                height: 10%;
+            }
+            .chat-page {
+                padding: 0 0 50px 0;
+            }
+
+            .msg-inbox {
+                border: 1px solid #ccc;
+                overflow: hidden;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+
+            .chats {
+                padding: 30px 15px 0 25px;
+            }
+            .msg-page {
+                max-height: 500px;
+                overflow-y: auto;
+            }
+
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="msg-header">
+            <div class="container1">
+                <img src="user1.png" class="msgimg">
+                <div class="active ">
+                    <p>Username</p>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+<!-- Chat inbox section starts -->
+         
+    <div class="chat-page">
+            <div class="msg-inbox">
+                <div class="chats">
+                     <div class="msg-page">
+<!-- Contains the incoming and outgoing messages -->
+                      </div> 
+                </div>
+                
+<!--  Message bottom section starts -->
+               <div class="msg-bottom">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Write message...">
+                    <div class="input-group-append ">
+                        <span class="input-group-text send-icon "><i class="bi bi-send "></i>
+                        </span>
+                    </div>
+                </div>
+              
+                </div> 
+                
+<!-- Message bottom section ends. -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
