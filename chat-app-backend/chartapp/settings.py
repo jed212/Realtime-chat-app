@@ -57,6 +57,15 @@ ROOT_URLCONF = 'chartapp.urls'
 
 AUTH_USER_MODEL = "chart.User"
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    # Use custom JWT Authentication
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'chart.tokenauthentication.JWTAuthentication'
+    ]
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -81,14 +90,6 @@ CHANNEL_LAYERS = {
         }
     }
 	}
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
 
 ASGI_APPLICATION = 'chartapp.asgi.application'
 
