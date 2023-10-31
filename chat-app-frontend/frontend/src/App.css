@@ -1,38 +1,96 @@
-.App {
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.chat-container{
+  display: flex;
+  height: 100vh;
+  background-color: black;
+}
+
+.sidebar{
+  flex: 1;
+  background-color: rgb(31, 28, 28);
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+}
+.chat-area{
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header{
+  background-color: #080808;
+  color: gainsboro;
+  padding: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.messages{
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.message{
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sent{
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.received{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-bubble{
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.sent .message-bubble{
+  background-color: paleturquoise;
+  color: black;
+  border-bottom-right-radius: 0;
+}
+
+.received .message-bubble{
+  background-color: blueviolet;
+  border-bottom-left-radius: 0;
+}
+
+.message-input{
+  background-color: white;
+  padding: 15px;
+  border-top: 1px solid gray;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.message-input textarea{
+  flex: 1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.message-input button{
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
 }
