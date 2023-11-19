@@ -3,24 +3,18 @@ import './App.css';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Navigate from './Components/Navigate';
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import ChatArea from './Components/ChatArea';
-import Sidebar from './Components/Sidebar';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Chat from './Components/Chat';
+
 
 function App() {
   return (
-    // <>
-    //   <div className='chat-container'>
-    //     <Sidebar/>
-    //     <ChatArea/>
-    //   </div>
-    // </>
     <BrowserRouter>
       <Navigate/>
       <Routes>
         <Route path='/Login' element={<Login/>}></Route>
         <Route path='/Register' element={<Register/>}></Route>
-        <Route path='/chat' element={<><Sidebar/><ChatArea/></>}/>
+        <Route path='/chat' element={<Chat/>}></Route>
       </Routes>
     </BrowserRouter>
   );
