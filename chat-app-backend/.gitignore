@@ -1,3 +1,4 @@
 # Files to ignore
-__pycache__/
+chart/__pycache__/
+chatapp/__pycache__/
 *.pyc
