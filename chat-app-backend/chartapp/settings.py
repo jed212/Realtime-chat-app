@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'chart'
+    'accounts',
+    'chat'
 ]
 
 MIDDLEWARE = [
@@ -60,14 +61,14 @@ CORS_ALLOWED_ORIGINS = [
 
 ROOT_URLCONF = 'chartapp.urls'
 
-AUTH_USER_MODEL = "chart.User"
+AUTH_USER_MODEL = "accounts.User"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     # Use custom JWT Authentication
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'chart.tokenauthentication.JWTAuthentication'
+        'accounts.tokenauthentication.JWTAuthentication'
     ]
 }
 
@@ -155,6 +156,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'chat-page'
+# LOGIN_REDIRECT_URL = 'chat-page'
 
-LOGOUT_REDIRECT_URL = 'login-user'
+# LOGOUT_REDIRECT_URL = 'login-user'

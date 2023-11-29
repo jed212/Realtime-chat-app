@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view # type: ignore
 from rest_framework.response import Response # type: ignore
 from rest_framework import status
-from chart.tokenauthentication import JWTAuthentication
+from accounts.tokenauthentication import JWTAuthentication
 from .serializers import UserSerializer, LoginSerializer
 
 @api_view(['POST','GET'])

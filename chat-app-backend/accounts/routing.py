@@ -1,5 +1,5 @@
 from django.urls import path , include
-from chart.consumers import PersonalChatConsumer
+from accounts.consumers import PersonalChatConsumer
 
 # Here, "" is routing to the URL PersonalChatConsumer which
 # will handle the chat functionality.
