@@ -22,7 +22,7 @@ class JWTAuthentication(BaseAuthentication):
 
             user_id = payload['id']
             user = User.objects.get(id=user_id)
-            return user
+            return user, None
         except (InvalidTokenError, ExpiredSignatureError, User.DoesNotExist):
             raise AuthenticationFailed("Invalid Token")
 
