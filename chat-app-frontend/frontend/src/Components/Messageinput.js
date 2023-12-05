@@ -12,9 +12,9 @@ export default function Messageinput() {
   return (
     <div className='message-input'>
         <textarea
-        placeholder='Type you message'
+        placeholder='Type your message'
         value={inputValue}
-        onchange={handleInputChange}
+        onChange={handleInputChange}
         />
         <button onClick={handleSendMessage}>Send</button>
     </div>

@@ -20,6 +20,8 @@ export default function Login() {
         .then(response => response.json())
         .then(data => {
         console.log(data);
+        const token = data.token;
+        document.cookie = `token=${token}; path=/`
         })
         .catch(error => {
         console.log(error);

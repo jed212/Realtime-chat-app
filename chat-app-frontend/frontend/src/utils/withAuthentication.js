@@ -3,7 +3,7 @@ import { useState } from "react"
 import Navigate from "../Components/Navigate";
 
 
-const withAuthentication = (wrappedComponent) => {
+const withAuthentication = (WrappedComponent) => {
     return function AuthComponent(props){
         const [isAuthenticated, setIsAuthenticated] = useState(false)
 
@@ -17,7 +17,7 @@ const withAuthentication = (wrappedComponent) => {
         },[]);
 
         if(isAuthenticated){
-            return <wrappedComponent {...props}/>
+            return <WrappedComponent {...props}/>
         }else{
             return <Navigate to="/Login"/>
         }
