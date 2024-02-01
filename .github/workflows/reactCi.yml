@@ -2,9 +2,8 @@ name: React CI/CD
 
 on:
   push:
-    branches:
-      - main
-
+    paths:
+      - 'chat-app-frontend/**'
 jobs:
   react:
     runs-on: ubuntu-latest
@@ -20,10 +19,10 @@ jobs:
 
       - name: Install Node.js dependencies
         run: |
-          cd chat-app-frontend
+          cd chat-app-frontend/frontend/
           npm install
 
       - name: Run React tests
         run: |
-          cd chat-app-frontend
+          cd chat-app-frontend/frontend/
           npm test

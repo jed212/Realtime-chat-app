@@ -2,8 +2,8 @@ name: Django CI/CD
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'chat-app-backend/**'
 
 jobs:
   django:
