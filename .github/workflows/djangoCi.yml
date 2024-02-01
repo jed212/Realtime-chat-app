@@ -25,5 +25,6 @@ jobs:
 
       - name: Run Django tests
         run: |
-          cd chat-app-backend
-          python manage.py test
+          cd chat-app-backend/chartapp
+          export DJANGO_SETTINGS_MODULE=chartapp.settings
+          pytest

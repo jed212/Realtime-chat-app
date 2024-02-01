@@ -2,3 +2,4 @@
 chart/__pycache__/
 chatapp/__pycache__/
 *.pyc
+accounts/htmlcov/
