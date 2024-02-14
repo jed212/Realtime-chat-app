@@ -15,7 +15,7 @@ class JWTAuthentication(BaseAuthentication):
         """Authenticate User"""
         token = self.extract_token(request=request)
         if token is None:
-            return None
+            return None, "Token not found"
         
         try:
             payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
@@ -23,9 +23,13 @@ class JWTAuthentication(BaseAuthentication):
 
             user_id = payload['id']
             user = User.objects.get(id=user_id)
+
+            if not user.is_active:  # Check if the user is active
+                raise AuthenticationFailed("User is inactive")
+
             return user, None
         except (InvalidTokenError, ExpiredSignatureError, User.DoesNotExist):
-            raise AuthenticationFailed("Invalid Token")
+            return None, "Invalid Token"
 
     def verify_token(self, payload):
         """Verify token validity"""
