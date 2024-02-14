@@ -1,5 +1,6 @@
 from rest_framework import serializers # type: ignore
-from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth import get_user_model
+from .tokenauthentication import JWTAuthentication
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -32,16 +33,15 @@ class LoginSerializer(serializers.Serializer):
         if password is None:
             raise serializers.ValidationError("A password is required for login")
         
-        user = authenticate(username=email, password=password)
+        jwt_auth = JWTAuthentication()
+        user = jwt_auth.authenticate(request=None)  # Pass None since it's not a HTTP request
 
         if user is None:
-            raise serializers.ValidationError(
-                "Invalid email or password"
-                )
+            raise serializers.ValidationError("Invalid email or password")
         if not user.is_active:
             raise serializers.ValidationError("User is inactive")
         
-        return{
+        return {
             "email": user.email,
             "id": user.id
         }

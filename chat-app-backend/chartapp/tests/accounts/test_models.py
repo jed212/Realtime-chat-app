@@ -1,4 +1,4 @@
-import pytest
+import pytest #type: ignore
 
 pytestmark = pytest.mark.django_db
 
