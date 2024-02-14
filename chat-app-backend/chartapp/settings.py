@@ -114,7 +114,16 @@ DATABASES = {
     }
 }
 
+# Database configuration for testing
+DATABASES['test'] = {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3_test',
+}
 
+# Configure test runner to use the test database
+if 'test' in os.environ.get('DJANGO_SETTINGS_MODULE', ''):
+    DATABASES['default'] = DATABASES['test']
+    
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
